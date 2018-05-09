@@ -1,5 +1,5 @@
 
-Persona testnet platform. For more information please refer to our website: https://persona.im.
+Persona mainnet platform. For more information please refer to our website: https://persona.im.
 
 This version is still alpha, use at your own risks
 
@@ -29,13 +29,9 @@ This is a fork from Ark with the following features:
 - Ability to verify a user`s name through signing the registered name
 - Ability to list the verifications
 
-### Planned features:
+### Planned features
+
 - Add IPFS in order to register documents
--
-
-
-### Performance
-- 
 
 
 ## Developer Installation
@@ -74,6 +70,7 @@ Install essentials:
 ```
 sudo apt-get update
 sudo apt-get install -y curl build-essential python git
+
 ```
 
 Install PostgreSQL (min version: 9.5.2)
@@ -81,7 +78,7 @@ Install PostgreSQL (min version: 9.5.2)
 ```
 sudo apt-get install -y postgresql postgresql-contrib
 sudo -u postgres createuser --createdb --password $USER
-createdb persona_testnet
+createdb persona_mainnet
 ```
 
 Install Node.js (tested with version 6.9.2, but any recent LTS release should do):
@@ -100,8 +97,8 @@ sudo npm install grunt-cli -g
 
 Clone this repository
 ```
-git clone https://github.com/PersonaIam/personatestnet.git
-cd personatestnet
+git clone https://github.com/PersonaIam/persona-mainnet.git
+cd persona-mainnet
 ```
 
 Install node modules:
@@ -111,10 +108,10 @@ npm install
 ```
 
 ## Launch
-To launch Persona on testnet:
+To launch Persona on mainnet:
 ```
-createdb persona_testnet
-npm run start:testnet
+createdb persona_mainnet
+npm run start:mainnet
 ```
 
 To launch Persona on localnet:
