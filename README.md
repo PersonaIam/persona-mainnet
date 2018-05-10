@@ -1,5 +1,5 @@
 
-Persona testnet platform. For more information please refer to our website: https://persona.im.
+Persona mainnet platform. For more information please refer to our website: https://persona.im.
 
 This version is still alpha, use at your own risks
 
