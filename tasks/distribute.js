@@ -26,7 +26,7 @@ var async = require("async");
 
 var networks = {
     testnet: {
-        nethash: "5ceaa37839023de939cfd5702584aaac09e37a904dad49c8d928b6770019a8b5",
+        nethash: "b4e87739ca85f7eabf844a643930573e9a2dd9da291662e74d26962b5c3f0ed9",
         peers: [
             "5.135.75.64:4101",
             "5.135.75.65:4101",
