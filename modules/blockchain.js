@@ -98,10 +98,10 @@ Blockchain.prototype.onStartBlockchain = function(){
 	setImmediate(function cleanBlockchain(){
 		var height = __private.lastBlock.height;
 		var blockremoved = __private.blockchain[height-200];
-		
+
 		if(height > 200)
 			library.logger.debug("Removing from memory blockchain blocks with height under", height-200);
-		
+
 			while(blockremoved){
 			delete __private.blockchain[blockremoved.height];
 			blockremoved = __private.blockchain[""+(blockremoved.height-1)];
@@ -343,6 +343,7 @@ Blockchain.prototype.onBlockRemoved = function(block) {
 Blockchain.prototype.onBlockReceived = function(block, peer) {
 	if(self.isPresent(block)){
 		library.logger.debug("Block already received", {id: block.id, height:block.height, peer:peer.string});
+		block.ready = false;
 		return;
 	}
 
@@ -480,18 +481,18 @@ __private.timestampState = function (lastReceipt) {
 	var timeNow = new Date().getTime();
 	__private.lastReceipt.secondsAgo = Math.floor((timeNow -  __private.lastReceipt.date.getTime()) / 1000);
 	if(modules.delegates.isActiveDelegate()){
-		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 10;
-		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 60;
+		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 100;
+		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 600;
 	}
 
 	else if(modules.delegates.isForging()){
-		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 30;
-		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 100;
+		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 300;
+		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 1000;
 	}
 
 	else {
-		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 60;
-		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 200;
+		__private.lastReceipt.stale = __private.lastReceipt.secondsAgo > 600;
+		__private.lastReceipt.rebuild = __private.lastReceipt.secondsAgo > 2000;
 	}
 
 	if(__private.lastBlock.height < 52){
