@@ -67,20 +67,8 @@
   },
   "forging": {
     "coldstart": 6,
-    "force": true,
+    "force": false,
     "secret": [
-      "humor penalty business ocean ginger beach nothing machine galaxy trade town trade",
-      "december limb doctor opinion opera woman hospital amazing have vintage mass hub",
-      "cheese cricket owner injury senior emerge release grit swamp eight under loud",
-      "crouch decade lens drift pet man police movie glad answer floor fluid",
-      "vanish buzz glass soup bulk elephant asthma debris can manual swift blouse",
-      "spatial air cram exhibit skill bicycle deal asthma fish unique gas define",
-      "slight confirm pond seek baby avocado casual fiber flash spawn cry science",
-      "pulse print gorilla until way oval able enjoy debris urban cattle pair",
-      "betray armor never town step blade number man remove cry club risk",
-      "exotic retire museum benefit remove utility indoor holiday exhibit stove elephant album",
-      "okay online mixed cabbage cross round roast normal pilot minor prevent that",
-      "tortoise two winter occur laugh spider call fiber unique mad endless media"
     ],
     "access": {
       "whiteList": [
