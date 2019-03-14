@@ -33,16 +33,16 @@ var config_version = '0.0.1';
 // ips of your nodes in your network
 var seed_peers = [
     {
-        ip: "89.40.7.63"
+        ip: '54.37.188.122'
     },
     {
-        ip: "192.99.54.32"
+        ip: '54.37.188.123'
     },
     {
-        ip: "45.77.180.23"
+        ip: '54.37.188.124'
     },
     {
-        ip: "5.135.75.77"
+        ip: '54.37.188.125'
     }
 ];
 
@@ -281,7 +281,7 @@ create = function (data) {
 	} catch (e) {
 		throw e;
 	}
-
+    // console.log('block = ' + block)
 	return block;
 }
 
@@ -367,7 +367,6 @@ var genesisBlock = create({
 });
 
 config.nethash = genesisBlock.payloadHash;
-
 fs.writeFile(output_dir+"/genesisBlock."+config.network+".json",JSON.stringify(genesisBlock, null, 2), () => {});
 fs.writeFile(output_dir+"/config."+config.network+".json",JSON.stringify(config, null, 2), () => {});
 
